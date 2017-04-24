@@ -1,0 +1,57 @@
+﻿@model Ancestry.Survey.ViewModels.ReportViewModel
+
+@{
+    ViewBag.Title = "Report";
+}
+
+<h2>Report</h2>
+
+<div>
+    <h4>Report</h4>
+    <hr />
+    <div>
+        <h5>Gender</h5>
+        <ul>
+            @foreach (var g in Model.GenderList)
+            {
+                <li>@g.Description - @g.Total</li>
+            }
+        </ul>
+    </div>
+    <div>
+        <h5>Countries</h5>
+        <ul>
+            @foreach (var c in Model.CountryList)
+            {
+                <li>@c.Description - @c.Total</li>
+            }
+        </ul>
+    </div>
+    <div>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.AverageAge)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AverageAge)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AverageRating)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AverageRating)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Total)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Total)
+            </dd>
+        </dl>
+    </div>
+</div>
